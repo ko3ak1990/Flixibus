@@ -56,15 +56,16 @@ public class DataManager {
     public Observable<TimeTableResponse> syncTimetable() {
         return mFlixiBusApiService.getTimeTable().map(response -> response.timetable)
                 .doOnNext(timeTableResponse -> {
-                    decorateTimeTable(timeTableResponse.arrivals);
-                    decorateTimeTable(timeTableResponse.departures);
+                    setArrivals(decorateTimeTable(timeTableResponse.arrivals));
+                    setDepartures(decorateTimeTable(timeTableResponse.departures));
                 });
     }
 
-    private void decorateTimeTable(List<TimeTableResult> results) {
+    private List<TimeTableResult> decorateTimeTable(List<TimeTableResult> results) {
         for (TimeTableResult timeTableResult : results) {
             timeTableResult.time = setTime(timeTableResult.dateTime);
         }
+        return results;
     }
 
     private String setTime(FlixDate date) {
