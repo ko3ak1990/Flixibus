@@ -20,26 +20,34 @@
             android:id="@+id/route_text_view"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            tools:text="L12312"
             android:layout_marginRight="10dp"
             android:background="@android:color/holo_blue_dark"/>
 
         <TextView
-            android:id="@+id/text_direction"
+            android:id="@+id/text_fromto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/text_direction"
+            android:layout_marginTop="5dp"
             android:layout_toRightOf="@+id/route_text_view"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/text_small_body"
+            tools:text="from"/>
+
+
+        <TextView
+            android:id="@+id/text_direction"
+            android:layout_width="wrap_content"
+            android:padding="5dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/text_fromto"
+            android:layout_centerInParent="true"
             android:textSize="@dimen/text_body"
             tools:text="Berlin"/>
 
-        <TextView
-            android:id="@+id/text_late"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/text_direction"
-            android:layout_marginTop="5dp"
-            android:layout_toRightOf="@+id/route_text_view"
-            android:textSize="@dimen/text_small_body"
-            tools:text="10min"/>
 
         <TextView
             style="@style/TextAppearance.AppCompat.Medium"

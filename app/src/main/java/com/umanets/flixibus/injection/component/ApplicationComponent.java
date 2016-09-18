@@ -1,6 +1,8 @@
 package com.umanets.flixibus.injection.component;
 
+import android.app.Activity;
 import android.app.Application;
+import android.app.Fragment;
 import android.content.Context;
 
 import com.umanets.flixibus.data.DataManager;
@@ -15,6 +17,7 @@ import org.greenrobot.eventbus.EventBus;
 import javax.inject.Singleton;
 
 import dagger.Component;
+import dagger.Subcomponent;
 
 
 @Singleton
@@ -26,9 +29,9 @@ public interface ApplicationComponent {
     @ApplicationContext
     Context context();
     Application application();
-    FlixiBusApiService ribotsService();
-    PreferencesHelper preferencesHelper();
-    DataManager dataManager();
     EventBus eventBus();
+    DataManager dataManager();
 
+    ActivityComponent activityComponent();
+    FragmentComponent fragmentComponent();
 }

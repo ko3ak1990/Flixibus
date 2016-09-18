@@ -3,6 +3,7 @@ package com.umanets.flixibus;
 import android.app.Application;
 import android.content.Context;
 
+
 import com.umanets.flixibus.injection.component.ApplicationComponent;
 import com.umanets.flixibus.injection.component.DaggerApplicationComponent;
 import com.umanets.flixibus.injection.module.ApplicationModule;

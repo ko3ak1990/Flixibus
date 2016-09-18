@@ -9,7 +9,7 @@ android {
         applicationId "com.umanets.flixibus"
         minSdkVersion 15
         targetSdkVersion 24
-        versionCode 1
+        versionCode 3
         versionName "1.0"
     }
     buildTypes {
@@ -38,7 +38,7 @@ dependencies {
     final RUNNER_VERSION = '0.4'
     final BUTTERKNIFE_VERSION = '8.4.0'
     final EVENTBUS_VERSION = '3.0.0'
-
+    final AUTO_VALUE_VERSION = '1.2'
 
     def daggerCompiler = "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
     def butterKnifeCompiler =  "com.jakewharton:butterknife-compiler:$BUTTERKNIFE_VERSION"
@@ -58,12 +58,17 @@ dependencies {
 
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.6'
-
+    compile "com.android.support:design:$SUPPORT_LIBRARY_VERSION"
     compile "org.greenrobot:eventbus:$EVENTBUS_VERSION"
     compile 'com.jakewharton.timber:timber:4.1.2'
     compile "com.jakewharton:butterknife:$BUTTERKNIFE_VERSION"
     apt butterKnifeCompiler
 
+    provided 'com.jakewharton.auto.value:auto-value-annotations:1.2-update1'
+    apt      "com.google.auto.value:auto-value:$AUTO_VALUE_VERSION"
+    apt      'com.ryanharter.auto.value:auto-value-parcel:0.2.3-rc2'
+    apt      'com.ryanharter.auto.value:auto-value-gson:0.3.2-rc1'
+    apt      'com.squareup:javapoet:1.7.0' //
 
     compile  "com.google.dagger:dagger:$DAGGER_VERSION"
     provided 'org.glassfish:javax.annotation:10.0-b28' //Required by Dagger2

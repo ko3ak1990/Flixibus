@@ -12,6 +12,7 @@ public class TimeTableResult {
     public String lineCode;
     @SerializedName("line_direction")
     public String lineDirection;
+    public String direction;
     @SerializedName("datetime")
     public FlixDate dateTime;
     public String time;

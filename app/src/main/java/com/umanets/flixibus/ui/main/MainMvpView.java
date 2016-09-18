@@ -8,9 +8,9 @@ import java.util.List;
 
 public interface MainMvpView extends MvpView {
 
-    void showResults(List<TimeTableResult> results);
+    void showResults(List<TimeTableResult> results,int type);
 
-    void showResultsEmpty();
+    void showResultsEmpty(int type);
 
     void showError();
 
